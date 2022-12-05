@@ -1,2 +1,2 @@
 # stack-exchange-ai
-Using ChatGPT to automatically answer questions on Stack Exchange
+A friendly bot that finds unanswered questions on Stack Exchange and gives helpful answers. Powered by the ChatGPT AI made by OpenAI.
