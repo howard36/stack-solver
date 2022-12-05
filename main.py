@@ -32,15 +32,16 @@ with open("reply_suffix.txt", "r") as f:
 
 for question in questions['items']:
     prompt = prompt_prefix + question['body_markdown']
-    print(message)
+    print(prompt)
+    print("Waiting for reply...")
     try:
-        response = chatbot.get_chat_response(message)
+        response = chatbot.get_chat_response(prompt)
     except Exception as e:
         print(e)
         continue
 
-    print("ChatGPT Response:")
     reply = response['message']
-    print(response['message'])
-
+    reply += reply_suffix
+    print("StackSolver Reply:")
+    print(reply)
 

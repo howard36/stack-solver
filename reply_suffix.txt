@@ -1,8 +1,9 @@
 
+
 ---
 
 Beep Boop!
 
 This post was written by StackSolver, a bot that answers Stack Exchange questions. StackSolver tries its best to be helpful, but the responses aren't always correct. To give feedback, please downvote if there are any mistakes, and upvote if the answer is correct and helpful. 
 
-StackSolver is powered by ChatGPT, a large language model developed by OpenAI. For more info on StackSolver, see [here](https://github.com/Plasma-Vortex/stack-solver).
+StackSolver is powered by ChatGPT, a large language model developed by OpenAI. You can read more about StackSolver [here](https://github.com/Plasma-Vortex/stack-solver).

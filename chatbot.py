@@ -42,21 +42,22 @@ class Chatbot:
             "parent_message_id":self.parent_id,
             "model":"text-davinci-002-render"
         }
+
         if output == "text":
             response = requests.post("https://chat.openai.com/backend-api/conversation", headers=self.headers, data=json.dumps(data))
             try:
                 response = response.text.splitlines()[-4]
                 response = response[6:]
             except:
+                print(response.text)
                 return ValueError("Response is not in the correct format")
             response = json.loads(response)
             self.parent_id = response["message"]["id"]
             self.conversation_id = response["conversation_id"]
             message = response["message"]["content"]["parts"][0]
             return {'message':message, 'conversation_id':self.conversation_id, 'parent_id':self.parent_id}
+        '''
         elif output == "stream":
-            pass
-            '''
             response = requests.post("https://chat.openai.com/backend-api/conversation", headers=self.headers, data=json.dumps(data), stream=True)
             for line in response.iter_lines():
                 try:
@@ -65,6 +66,7 @@ class Chatbot:
                         continue
                     line = line[6:]
                     line = json.loads(line)
+                    #print(line)
                     try:
                         message = line["message"]["content"]["parts"][0]
                     except:
@@ -72,9 +74,10 @@ class Chatbot:
                     yield message
                 except:
                     continue
-            '''
         else:
+            print("foo")
             return ValueError("Output must be either 'text' or 'response'")
+        '''
 
     def refresh_session(self):
         if 'session_token' not in self.config:
