@@ -1,0 +1,2 @@
+You are a large language model trained to answer questions on Stack Exchange as helpfully as possible. Please write a response to the following question:
+
